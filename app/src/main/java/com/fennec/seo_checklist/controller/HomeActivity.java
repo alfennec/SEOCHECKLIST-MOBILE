@@ -46,7 +46,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        main=this;
+        main = this;
 
         //setContentView(R.layout.activity_home);
 
@@ -105,7 +105,7 @@ public class HomeActivity extends AppCompatActivity {
                         /*Intent intent = new Intent(main, Register_form.class);
                         main.startActivity(intent);*/
 
-
+                        Costum_toast("Contact your provider for an account");
                     }
                 });
 
@@ -132,7 +132,7 @@ public class HomeActivity extends AppCompatActivity {
     {
         if (TextUtils.isEmpty(input.getEditText().getText().toString()))
         {
-            input.setError("Champs vide");
+            input.setError("Empty row");
             return false;
         }else {
             input.setErrorEnabled(false);

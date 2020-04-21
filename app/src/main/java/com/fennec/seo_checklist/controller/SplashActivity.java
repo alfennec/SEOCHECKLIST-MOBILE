@@ -40,7 +40,9 @@ public class SplashActivity extends AppCompatActivity {
         }, time_splash);
 
 
-        Ion.getDefault(main).getHttpClient().getSSLSocketMiddleware().setTrustManagers(new TrustManager[] {new X509TrustManager() {
+        //Ion.getDefault(main).getConscryptMiddleware().enable(false);
+
+        /*Ion.getDefault(main).getHttpClient().getSSLSocketMiddleware().setTrustManagers(new TrustManager[] {new X509TrustManager() {
 
             @Override
             public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType) throws java.security.cert.CertificateException {
@@ -56,7 +58,7 @@ public class SplashActivity extends AppCompatActivity {
             public java.security.cert.X509Certificate[] getAcceptedIssuers() {
                 return new X509Certificate[0];
             }
-        }});
+        }});*/
     }
 
     public static void onSucces()

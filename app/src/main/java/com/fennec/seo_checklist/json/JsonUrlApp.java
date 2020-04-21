@@ -48,7 +48,7 @@ public class JsonUrlApp implements IonHandler {
                     {
                         if(result != null)
                         {
-                            //Log.d("TAG_JSON", "onClick: SEND URL " + result);
+                            Log.e("TAG_JSON", "onClick: SEND URL " + result);
                             ConditionResult( result );
                         }
                     }

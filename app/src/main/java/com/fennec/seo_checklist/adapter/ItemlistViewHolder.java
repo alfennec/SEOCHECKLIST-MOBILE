@@ -1,9 +1,12 @@
 package com.fennec.seo_checklist.adapter;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.bignerdranch.expandablerecyclerview.ChildViewHolder;
@@ -25,7 +28,7 @@ import java.util.Calendar;
 public class ItemlistViewHolder extends ChildViewHolder {
 
     private CheckBox checkBox2;
-    public ImageView imageView3;
+    public ImageButton button_link;
 
     public boolean inif = false;
 
@@ -33,7 +36,7 @@ public class ItemlistViewHolder extends ChildViewHolder {
     {
         super(itemView);
         checkBox2 = itemView.findViewById(R.id.checkBox2);
-        imageView3 = itemView.findViewById(R.id.imageView3);
+        button_link = itemView.findViewById(R.id.button_link);
 
     }
 
@@ -41,6 +44,18 @@ public class ItemlistViewHolder extends ChildViewHolder {
     {
         checkBox2.setText(mychecklist.intituler);
         checkBox2.setChecked(ProgressRepository.getCheckedItem(mychecklist.id));
+
+        button_link.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                String url = "http://"+mychecklist.link;
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                CheckActivity.main.startActivity(i);
+            }
+        });
 
         checkBox2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {

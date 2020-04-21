@@ -111,6 +111,9 @@ public class JsonUrlClient implements IonHandler {
                 }
 
                 ClientRepository.main_Client = json_client;
+                Log.e("tag_json", ClientRepository.main_Client.email);
+
+
             }
         }
         catch (Exception e)

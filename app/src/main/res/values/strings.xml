@@ -8,9 +8,49 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="menu_gallery">More Infos</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
+    <string name="menu_send">Visit our WebSite</string>
+    <string name="menu_dev">Developed by</string>
+    <string name="title_activity_more">MoreActivity</string>
+    <string name="large_text">
+        More Info : This extension is a tool designed to help you focus on the top youtube and video SEO ranking factors pulled from several reputable industry reports and top SEO experts.
+    For a more in depth explanation, see the Step By Step YouTube SEO Checklist 2019 Version blog post which has info for each step and one paragraph description of each point.
+    I refer to the “blog post” within the checklist several times where i recommend free tools or a tutorial that helps or explains some steps of this checklist.
+    These are SEO and traffic strategies designed to help you drive more traffic through your videos.\n
+    You can check your optimization score and see it improve with each task that you complete from the automated scorer at the bottom of the extension
+    \n
+    \n
+    Recommended YouTube SEO Software : You Can Automate Your YouTube Video, Channel and Playlist Optimization Using The Following Tools Which All Have Built In Strategies Made Checkbox Simple!
+    \n
+    Tubekit Alpha (Video and Channel Optimization Software)\n
+    Video Synd Alpha (Video Distribution Software)\n
+    Vid Attack Alpha (Increase User Behaviour Signals: CTR From SERPS  and Retention)\n
+    Vid Curate Alpha (Powerful YouTube Playlist Ranking and Social Video Curation Tools)\n
+    Multi-Feed RSS Plugin (Create Playlists From Channel, Videos, Playlists With RSS Syndication)\n
+    \n
+    \n
+    \n
+Free Tools, Tutorials and Resources : You Can Automate Your YouTube Video, Channel and Playlist Optimization Using The Following Tools Which All Have Built In Strategies Made Checkbox Simple!
+\n
+   Free Tools\n
+    Make YouTube Thumbnails With This Free Tool\n
+    Ubersuggest Free Keyword Tool\n
+    Get a Free One Site License For WordPress RSS Xtreme\n
+
+        Recommended Tutorials, Blog Posts and Cheat Sheets\n
+        Viral Content: 21 Data-Driven Techniques That Work Fast\n
+        51 Headline Formulas For Higher Conversions\n
+        Content Upgrade Ideas To Grow Your Email List\n
+        Coschedule Headline Analyzer\n
+        401 Headline POWER WORDS\n
+        Top Headline Phrases Analyzed\n
+        Sumo Swipe File\n
+        Headlines: Analysis of 10 Million Articles Shared on LinkedIn\n
+        \n
+            Create Checklists with these tools\n
+            Tools to easily create checklists: Forget and Checklist\n
+            </string>
 </resources>

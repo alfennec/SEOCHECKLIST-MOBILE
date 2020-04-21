@@ -2,6 +2,7 @@ package com.fennec.seo_checklist.controller;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.fennec.seo_checklist.R;
@@ -24,9 +25,14 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -39,6 +45,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
     public static MainActivity main;
 
     public static ProgressDialog dialog;
+
+    public static TextView username, email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -57,14 +67,12 @@ public class MainActivity extends AppCompatActivity {
 
         main = this;
 
-
-
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Visite our web site", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Check Out Tukekit Alpha For Better SEO : http://anthonyhayes.online/products/tubekit-alpha/", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -77,13 +85,101 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_tools, R.id.nav_share, R.id.nav_send)
                 .setDrawerLayout(drawer)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        final NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        /*navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener()
+        {
+            @Override
+            public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments)
+            {
+                if(destination.getId() == R.id.nav_share)
+                {
+                    Intent sendIntent = new Intent();
+                    sendIntent.setAction(Intent.ACTION_SEND);
+                    sendIntent.putExtra(Intent.EXTRA_TEXT,
+                            "Check Out Tukekit Alpha For Better YouTube SEO : http://anthonyhayes.online/products/tubekit-alpha/");
+                    sendIntent.setType("text/plain");
+                    startActivity(sendIntent);
+                }
+
+                if(destination.getId() == R.id.nav_send)
+                {
+                    String url = "http://anthonyhayes.online/products/tubekit-alpha/";
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+                }
+
+            }
+        });*/
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener()
+        {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
+            {
+                int id=menuItem.getItemId();
+                //it's possible to do more actions on several items, if there is a large amount of items I prefer switch(){case} instead of if()
+
+                if (id==R.id.nav_gallery)
+                {
+                    Intent myIntent = new Intent(MainActivity.this, MoreActivity.class);
+                    //Optional parameters
+                    MainActivity.this.startActivity(myIntent);
+                }
+
+                if (id==R.id.nav_tools)
+                {
+                    Intent myIntent = new Intent(MainActivity.this, DevActivity.class);
+                    //Optional parameters
+                    MainActivity.this.startActivity(myIntent);
+                }
+
+
+                if (id==R.id.nav_share)
+                {
+                    Intent sendIntent = new Intent();
+                    sendIntent.setAction(Intent.ACTION_SEND);
+                    sendIntent.putExtra(Intent.EXTRA_TEXT,
+                            "Check Out Tukekit Alpha For Better YouTube SEO : http://anthonyhayes.online/products/tubekit-alpha/");
+                    sendIntent.setType("text/plain");
+                    startActivity(sendIntent);
+                }
+
+
+                if (id==R.id.nav_send)
+                {
+                    String url = "http://anthonyhayes.online/products/tubekit-alpha/";
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+                }
+
+                if (id==R.id.nav_gallery)
+                {
+                    Intent myIntent = new Intent(MainActivity.this, MoreActivity.class);
+                    //Optional parameters
+                    MainActivity.this.startActivity(myIntent);
+                }
+
+                return true;
+            }
+        });
+
+
+
+        /*********************** bar app **********************/
+        username = (TextView) findViewById(R.id.client_name);
+        email = (TextView) findViewById(R.id.client_email);
+
+        //username.setText(ClientRepository.main_Client.first_name+" "+ClientRepository.main_Client.last_name);
+        //email.setText(ClientRepository.main_Client.email);
+        //Log.e("TAG USER", ClientRepository.main_Client.email);
+
 
         /*********************** get assigned than get app **********************/
-
         dialog =  ProgressDialog.show(main, "", "Loading. Please wait...", true);
         Onload_Assigned();
 
